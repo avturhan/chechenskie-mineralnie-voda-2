@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/contacts.css">
+</head>
+<body>
+    <header class="reviews-header">
+        <h1>Чеченские Минеральные Воды</h1>
+     </header>
+       <!-- Гамбургер иконка -->
+<div class="hamburger-menu" id="hamburger-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  
+  <!-- Меню навигации -->
+  <nav class="mobile-navigation" id="mobile-navigation">
+    <ul>
+      <li><a href="./главное.html">Главная</a></li>
+      <li><a href="./home.html">О нас</a></li>
+      <li><a href="./drinks.html">Продукция</a></li>
+      <li><a href="./contacts.html">Контакты</a></li>
+      <li><a href="./reviews.html">Отзывы</a></li>
+    </ul>
+    <script>document.addEventListener('DOMContentLoaded', function() {
+      var hamburger = document.getElementById('hamburger-menu');
+      var nav = document.getElementById('mobile-navigation');
+    
+      hamburger.addEventListener('click', function() {
+        // Меню выезжает слева
+        nav.style.left = nav.style.left === '0px' ? '-100%' : '0px';
+      });
+    });
+    </script>
+    <!-- Здесь ваше навигационное меню -->
+  </nav>
+  
+
+
+   <div class="contacts-container">
+    <h2>Связаться с нами</h2>
+    <div class="contact-info">
+        <div class="contact-info-item">
+            <h3>Адрес:</h3>
+            <p> <strong><a href="https://www.google.com/maps/search/?api=1&query=366701,+Чеченская+Респ.,+Серноводский+м.р-н,+Серноводское+с.п.,+с.+Серноводское,+ул.+Курортная,+Д.+23А" target="_blank">366701, Чеченская Респ., Серноводский м.р-н, Серноводское с.п., с. Серноводское, ул. Курортная, Д. 23А</a></strong></p>
+        </div>
+        <div class="contact-info-item">
+            <h3>Телефон:</h3>
+            <p><strong><a href="tel:+78712294642">(871) 229-46-42</a></strong></p>
+        </div>
+        <div class="contact-info-item">
+            <h3>Email:</h3>
+            <p><strong><a href="mailto:info@companyname.com">info@companyname.com</a></strong></p>
+        </div>
+    <div class="contact-info-item">
+        <h3>Рабочие часы:</h3>
+        <p>Пн-Пт: 9:00 - 18:00</p>
+    <!-- Другие контактные данные -->
+    <script>
+    // Пример кода для открытия Google Карт по клику на адрес
+document.querySelectorAll('.contact-info-item a').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (link.href.startsWith('mailto:')) {
+      // обработка для Email
+      window.location.href = link.href;
+    } else if (link.href.startsWith('tel:')) {
+      // обработка для Телефона
+      window.location.href = link.href;
+    } else {
+      // открытие карты в новом окне
+      window.open(link.href, '_blank');
+    }
+  });
+});
+</script>
+</div>
+      
+      </div>
+    </div>
+
+<div>
+    <form action="#" method="post" class="contact-form">
+      <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+      <input type="email" id="email" name="email" placeholder="Ваш Email" required>
+      <textarea id="message" name="message" placeholder="Ваше сообщение" required></textarea>
+      <button type="submit">Отправить</button>
+    </form>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+  // Анимация появления элементов
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible');
+      }
+    });
+  }, {
+    threshold: 0.1 // эти элементы должны быть видимы как минимум на 10%
+  });
+
+  document.querySelectorAll('.fade-in').forEach((el) => {
+    observer.observe(el);
+  });
+
+  // Добавление класса отправки для кнопки
+  const contactFormButton = document.querySelector('.contact-form button');
+  document.querySelector('.contact-form').addEventListener('submit', (event) => {
+    event.preventDefault();
+    contactFormButton.classList.add('sending');
+    contactFormButton.textContent = 'Отправка...';
+    // Имитируем отправку формы
+    setTimeout(() => {
+      contactFormButton.classList.remove('sending');
+      contactFormButton.textContent = 'Отправить';
+      // Здесь должен быть реальный код отправки данных формы
+    }, 3000);
+  });
+});
+
+    </script>
+  </div>
+  
+
+
+</body>
+</html>

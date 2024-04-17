@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/drinks.css">
+</head>
+<body>
+    <header>
+        <h1>Чеченские Минеральные Воды</h1>
+     </header>
+     
+    <!-- Гамбургер иконка -->
+ <div class="hamburger-menu" id="hamburger-menu">
+     <span></span>
+     <span></span>
+     <span></span>
+   </div>
+   
+   <!-- Навигационное меню -->
+   <nav class="mobile-navigation hidden" id="mobile-navigation">
+     <ul>
+       <li><a href="./главное.html">Главная</a></li>
+       <li><a href="./home.html">О нас</a></li>
+       <li><a href="./drinks.html">Продукция</a></li>
+       <li><a href="./contacts.html">Контакты</a></li>
+       <li><a href="./reviews.html">Отзывы</a></li>
+     </ul>
+     <script>document.addEventListener('DOMContentLoaded', function() {
+         var hamburgerMenu = document.getElementById('hamburger-menu');
+         var mobileNavigation = document.getElementById('mobile-navigation');
+       
+         hamburgerMenu.addEventListener('click', function() {
+           // Если меню скрыто, сдвигаем его на ширину его контейнера
+           mobileNavigation.style.left = mobileNavigation.style.left === '0px' ? '-260px' : '0px';
+         });
+       });
+       </script>
+   </nav>
+
+<!-- Обертка для переключения категорий товаров в магазине -->
+<div class="t-store__parts-switch-wrapper t-align_center">
+  <div class="js-store-parts-switcher t-store__parts-switch-btn t-name t-name_xs t-menulink-item t-active" 
+       data-filter="all">Все</div>
+  <div class="js-store-parts-switcher t-store__parts-switch-btn t-name t-name_xs t-menulink-item" 
+       data-filter="drinking-water">Питьевая вода</div>
+  <div class="js-store-parts-switcher t-store__parts-switch-btn t-name t-name_xs t-menulink-item" 
+       data-filter="mineral-water">Минеральная вода</div>
+  <div class="js-store-parts-switcher t-store__parts-switch-btn t-name t-name_xs t-menulink-item" 
+       data-filter="sodas">Газированные напитки</div>
+  <div class="js-store-parts-switcher t-store__parts-switch-btn t-name t-name_xs t-menulink-item" 
+       data-filter="cold-teas">Холодные чаи</div>
+  <div class="js-store-parts-switcher t-store__parts-switch-btn t-name t-name_xs t-menulink-item" 
+       data-filter="juices">Соки и нектары</div>
+  <div class="js-store-parts-switcher t-store__parts-switch-btn t-name t-name_xs t-menulink-item" 
+       data-filter="cola">Кола</div>
+  <div class="js-store-parts-switcher t-store__parts-switch-btn t-name t-name_xs t-menulink-item" 
+       data-filter="energy-drinks">Энергетические напитки</div>
+<script>
+  document.querySelectorAll('.js-store-parts-switcher').forEach(button => {
+  button.addEventListener('click', function() {
+    // Убираем активный класс у всех кнопок
+    document.querySelectorAll('.js-store-parts-switcher').forEach(btn => btn.classList.remove('t-active'));
+    
+    // Добавляем активный класс к нажатой кнопке
+    this.classList.add('t-active');
+    
+    // Берём значение категории из data-атрибута
+    const filter = this.getAttribute('data-filter');
+    
+    // Фильтруем товары по категории
+    document.querySelectorAll('.js-product').forEach(product => {
+      const category = product.getAttribute('data-category');
+      const isCategoryMatch = category === filter || filter === 'all';
+      product.style.display = isCategoryMatch ? 'block' : 'none';
+    });
+  });
+});
+</script>
+</div>
+
+
+<div class="t-storegrid-cont t-container t-storegrid-cont_mobile-grid t-storevalign-buttons">
+  <!-- Карточка товара "Питьевая вода" -->
+  <div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="drinking-water">
+    <div class="t-storecardwrap_all">
+      <div class="t-storecardimgwrapper">
+        <img src="./img/32192043.jpg" alt="Питьевая вода" class="t-storecardimg">
+      </div>
+      <div class="t-storecardtextwrapper">
+        <div class="js-store-prod-name t-storecardtitle">Вода без газа 0,5 л 1/12 пэт</div>
+        <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+        <div class="js-store-prod-price t-storecardprice">Цена: <span>340 руб.</span></div>
+        <div class="t-storecardquantity">
+          <span class="t-storecardquantitylabel">Количество:</span>
+          <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+          <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+          <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+        </div>
+        <button onclick="addToCart('Вода без газа 0,5 л', 340)">Добавить в корзину</button>    
+      </div>
+    </div>
+  </div>
+
+  <div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="drinking-water">
+    <div class="t-storecardwrap_all">
+      <div class="t-storecardimgwrapper">
+        <img src="./img/21034938.jpg" alt="Питьевая вода" class="t-storecardimg">
+      </div>
+      <div class="t-storecardtextwrapper">
+        <div class="js-store-prod-name t-storecardtitle">Вода без газа 1,5 л 1/6 пэт </div>
+        <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+        <div class="js-store-prod-price t-storecardprice">Цена: <span>240 руб.</span></div>
+        <div class="t-storecardquantity">
+          <span class="t-storecardquantitylabel">Количество:</span>
+          <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+          <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+          <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+        </div>
+        <button onclick="addToCart('Вода без газа 1,5 л', 2400)">Добавить в корзину</button>    
+      </div>
+    </div>
+  </div>
+
+  <div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="drinking-water">
+    <div class="t-storecardwrap_all">
+      <div class="t-storecardimgwrapper">
+        <img src="./img/33988610.jpg" alt="Питьевая вода" class="t-storecardimg">
+      </div>
+      <div class="t-storecardtextwrapper">
+        <div class="js-store-prod-name t-storecardtitle">Вода без газа 5 л 1/2 </div>
+        <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+        <div class="js-store-prod-price t-storecardprice">Цена: <span>190 руб.</span></div>
+        <div class="t-storecardquantity">
+          <span class="t-storecardquantitylabel">Количество:</span>
+          <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+          <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+          <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+        </div>
+        <button onclick="addToCart('Вода без газа 5 л', 190)">Добавить в корзину</button>    
+      </div>
+    </div>
+  </div>
+
+  <div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="drinking-water">
+    <div class="t-storecardwrap_all">
+      <div class="t-storecardimgwrapper">
+        <img src="./img/76333795.jpg" alt="Питьевая вода" class="t-storecardimg">
+      </div>
+      <div class="t-storecardtextwrapper">
+        <div class="js-store-prod-name t-storecardtitle">Вода без газа 9 л</div>
+        <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+        <div class="js-store-prod-price t-storecardprice">Цена: <span>160 руб.</span></div>
+        <div class="t-storecardquantity">
+          <span class="t-storecardquantitylabel">Количество:</span>
+          <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+          <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+          <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+        </div>
+        <button onclick="addToCart('Вода без газа 9 л', 160)">Добавить в корзину</button>    
+      </div>
+    </div>
+  </div>
+
+  <div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="drinking-water">
+    <div class="t-storecardwrap_all">
+      <div class="t-storecardimgwrapper">
+        <img src="./img/84354371.jpg" alt="Питьевая вода" class="t-storecardimg">
+      </div>
+      <div class="t-storecardtextwrapper">
+        <div class="js-store-prod-name t-storecardtitle">Вода без газа с лимоном 0,5 л пэт 1/12 </div>
+        <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+        <div class="js-store-prod-price t-storecardprice">Цена: <span>340 руб.</span></div>
+        <div class="t-storecardquantity">
+          <span class="t-storecardquantitylabel">Количество:</span>
+          <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+          <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+          <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+        </div>
+        <button onclick="addToCart('Вода без газа с лимоном 0,5 л', 340)">Добавить в корзину</button>    
+      </div>
+    </div>
+  </div>
+      
+      
+
+<!--Минеральная-->
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="mineral-water">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="./img/96528413.jpg" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Вода с газом 0,5 л 1/12 пэт</div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>420 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Вода с газом 0,5 л', 420)">Добавить в корзину</button>    
+    </div>
+  </div>
+</div>
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="mineral-water">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="./img/33204125.jpg" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Вода с газом 1,5 л 1/6 пэт</div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>240 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Вода с газом 1,5 л', 240)">Добавить в корзину</button>    
+    </div>
+  </div>
+</div>
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="mineral-water">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="./img/69559644.jpg" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Вода минеральная Серноводская 1,5 л 1/6 </div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>480 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Вода минеральная Серноводская 1,5 л', 480)">Добавить в корзину</button>    
+    </div>
+  </div>
+</div>
+
+
+ <!--холодные чаи-->
+
+ <div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="cold-teas">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="./img/11198805.jpg" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Чай черный со вкусом карамели и малины ТМ СТОМ 1,5 л 1/6 пэт</div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>810 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Чай черный со вкусом карамели и малины ТМ СТОМ 1,5 л', 810)">Добавить в корзину</button>   
+    </div>
+  </div>
+</div>
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="cold-teas">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="./img/24318322.jpg" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Чай черный со вкусом Лимона ТМ СТОМ 1,5 л 1/6 пэт</div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>810 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Чай черный со вкусом Лимона ТМ СТОМ 1,5 л', 810)">Добавить в корзину</button>    
+    </div>
+  </div>
+</div>
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="cold-teas">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="./img/47374176.jpg" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Чай черный со вкусом Персика ТМ СТОМ 1,5 л 1/6 пэт</div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>810 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Чай черный со вкусом Персика ТМ СТОМ 1,5 л', 810)">Добавить в корзину</button>    
+    </div>
+  </div>
+</div>
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="cold-teas">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="./img/11198805.jpg" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Чай черный со вкусом карамели и малины ТМ СТОМ 0,5 л 1/12 пэт</div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>840 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Чай черный со вкусом карамели и малины ТМ СТОМ 0,5 л', 810)">Добавить в корзину</button>   
+    </div>
+  </div>
+</div>
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="cold-teas">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="./img/24318322 (1).jpg" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Чай черный со вкусом Лимона ТМ СТОМ 0,5 л 1/12 пэт</div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>840 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Чай черный со вкусом Лимона ТМ СТОМ 0,5 л', 810)">Добавить в корзину</button>    
+    </div>
+  </div>
+</div>
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="cold-teas">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="./img/89394313 (1).jpg" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Зеленый чай с лесными ягодами ТМ СТОМ 0,5 л 1/12</div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>840 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Зеленый чай с лесными ягодами ТМ СТОМ 0,5 л', 810)">Добавить в корзину</button>    
+    </div>
+  </div>
+</div>
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="cold-teas">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="./img/89394313.jpg" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Зеленый чай с лесными ягодами ТМ СТОМ 1,5 л 1/6</div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>810 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Зеленый чай с лесными ягодами ТМ СТОМ 1,5 л', 810)">Добавить в корзину</button>    
+    </div>
+  </div>
+</div>
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="cold-teas">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="./img/12421289.jpg" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Зеленый чай со вкусом Малины ТМ СТОМ 1,5 л 1/6</div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>810 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Зеленый чай со вкусом Малины ТМ СТОМ 1,5 л', 810)">Добавить в корзину</button>    
+    </div>
+  </div>
+</div>
+
+
+<!-- гаизированные напитки -->
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="sodas">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="./img/66340070.jpg" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Ирландский Лимонад ТМ СТОМ 0,5 л 1/12</div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>420 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Ирландский Лимонад ТМ СТОМ 0,5 л', 420)">Добавить в корзину</button>    
+    </div>
+  </div>
+</div>
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="sodas">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="./img/77563679.jpg" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Ирландский Лимонад ТМ СТОМ 1,5 л 1/6</div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>360 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Ирландский Лимонад ТМ СТОМ 1,5 л', 360)">Добавить в корзину</button>    
+    </div>
+  </div>
+</div>
+
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="sodas">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="./img/11849598.jpg" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Лимонад Груша 0,5 л 1/12</div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>420 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Лимонад Груша 0,5 л', 420)">Добавить в корзину</button>    
+    </div>
+  </div>
+</div>
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="sodas">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="./img/76691636.jpg" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Лимонад Груша 1,5 л 1/6</div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>360 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Лимонад Груша 1,5 л', 360)">Добавить в корзину</button>    
+    </div>
+  </div>
+</div>
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="sodas">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="./img/11820482.jpg" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Лимонад СТОМ Лимон и Лайм с газом 0,5 л пэт 1/12 </div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>420 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Лимонад СТОМ Лимон и Лайм с газом 0,5 л', 420)">Добавить в корзину</button>    
+    </div>
+  </div>
+</div>
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="sodas">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="./img/56137522.jpg" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Лимонад СТОМ Лимон и Лайм с газом 1,5 л пэт 1/6</div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>360 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Лимонад СТОМ Лимон и Лайм с газом 1,5 л', 360)">Добавить в корзину</button>    
+    </div>
+  </div>
+</div>
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="sodas">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="./img/22680461.jpg" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Тархун СТОМ  пэт с газом 1,5 л 1/6</div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>360 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Тархун СТОМ  пэт с газом 1,5 л', 360)">Добавить в корзину</button>   
+    </div>
+  </div>
+</div>
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="sodas">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="./img/" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Тархун СТОМ пэт с газом 0,5 л 1/12</div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>360 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Тархун СТОМ пэт с газом 0,5 л', 360)">Добавить в корзину</button>    
+    </div>
+  </div>
+</div>
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="sodas">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="./img/" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Лимонад Вишня СТОМ 0,5 л стекло 1/12</div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>840 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Лимонад Вишня СТОМ 0,5 л стекло', 840)">Добавить в корзину</button>    
+    </div>
+  </div>
+</div>
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="sodas">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="./img/66468277.jpg" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Лимонад ЧИАССР 0,5 л стекло 1/12</div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>840 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Лимонад ЧИАССР 0,5 л стекло', 840)">Добавить в корзину</button>    
+    </div>
+  </div>
+</div>
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="sodas">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="./img/21514899.jpg" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Лимонад ЧИАССР 1,5 л 1/6</div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>600 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Лимонад ЧИАССР 1,5 л', 600)">Добавить в корзину</button>   
+    </div>
+  </div>
+</div>
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="sodas">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="./img/89965094.jpg" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Лимонад ЧИАССР Дюшес 0,5 л стекло 1/12</div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>840 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Лимонад ЧИАССР Дюшес 0,5 л стекло', 840)">Добавить в корзину</button>   
+    </div>
+  </div>
+</div>
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="sodas">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="./img/88869429.jpg" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Лимонад ЧИАССР Дюшес 1,5 л 1/6</div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>600 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Лимонад ЧИАССР Дюшес 1,5 л', 600)">Добавить в корзину</button>   
+    </div>
+  </div>
+</div>
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="sodas">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="./img/50976490.jpg" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Лимонад ЧИАССР Тиграша 1,5 л 1/6</div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>600 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Лимонад ЧИАССР Тиграша 1,5 л', 600)">Добавить в корзину</button>    
+    </div>
+  </div>
+</div>
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="sodas">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Газированные напитки МОХИТО ж/б 0,45 л 1/9 Классический </div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>600 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('МОХИТО Классический ж/б', 600)">Добавить в корзину</button>   
+    </div>
+  </div>
+</div>
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="sodas">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Газированные напитки МОХИТО ж/б 0,45 л 1/9 Арбуз</div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>600 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>   
+    </div>
+  </div>
+</div>
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="sodas">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Газированные напитки МОХИТО ж/б 0,45 л 1/9 Манго</div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>600 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('МОХИТО Манго ж/б', 600)">Добавить в корзину</button> 
+    </div>
+  </div>
+</div>
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="sodas">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Газированные напитки МОХИТО ж/б 0,45 л 1/9 Клубника</div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>600 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('МОХИТО Клубника ж/б', 600)">Добавить в корзину</button>     
+    </div>
+  </div>
+</div>
+
+
+
+<!-- соки и нектары-->
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="juices">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="./img/84929345.jpg" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Нектар Вишня 0,5л 1/6 пэт</div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>810 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Нектар Вишня', 810)">Добавить в корзину</button>    
+    </div>
+  </div>
+</div>
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="juices">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="./img/84929345 (1).jpg" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Нектар Вишня 1л 1/12 пэт</div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>1020 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Нектар Вишня', 1020)">Добавить в корзину</button>       
+    </div>
+  </div>
+</div>
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="juices">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="./img/60277757.jpg" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Нектар мультифрукт 1л 1/6 пэт</div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>810 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Нектар мультифрукт', 810)">Добавить в корзину</button>        
+    </div>
+  </div>
+</div>
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="juices">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="./img/28887762.jpg" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Нектар яблоко-виноград 1л 1/6 пэт</div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>810 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Нектар яблоко-виноград', 810)">Добавить в корзину</button>     
+    </div>
+  </div>
+</div>
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="juices">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="./img/28887762.jpg" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Сок яблоко 1л 1/6 пэт</div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>810 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Сок яблоко', 810)">Добавить в корзину</button>        
+    </div>
+  </div>
+</div>
+
+
+
+<!-- кола -->
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="cola">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="./img/17275123.jpg" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Кола ТМ Inzare 1,5л 1/6 пэт</div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>600 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Кола ТМ Inzare', 600)">Добавить в корзину</button>     
+    </div>
+  </div>
+</div>
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="cola">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="./img/46541193.jpg" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Кола ТМ СТОМ 0,5л 1/12 пэт</div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>660 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Кола ТМ СТОМ', 660)">Добавить в корзину</button>       
+    </div>
+  </div>
+</div>
+
+<div class="js-product t-storecard t-col t-col_4 t-align_left t-item" data-category="cola">
+  <div class="t-storecardwrap_all">
+    <div class="t-storecardimgwrapper">
+      <img src="" alt="Питьевая вода" class="t-storecardimg">
+    </div>
+    <div class="t-storecardtextwrapper">
+      <div class="js-store-prod-name t-storecardtitle">Кола ТМ Inzare 0,33л 1/9 ж/б </div>
+      <div class="js-store-prod-descr t-storecarddescr">Чистая природная вода из артезианского источника</div>
+      <div class="js-store-prod-price t-storecardprice">Цена: <span>400 руб.</span></div>
+      <div class="t-storecardquantity">
+        <span class="t-storecardquantitylabel">Количество:</span>
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, -1)">-</button>
+        <input type="number" class="t-storecardquantityinput" value="1" min="1" max="99">
+        <button class="t-storecardquantitybutton" onclick="changeQuantity(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Кола ТМ Inzare', 400)">Добавить в корзину</button>      
+    </div>
+  </div>
+</div>
+
+<!-- Скрипт для функциональности -->
+<script>
+  function changeQuantity(element, value) {
+    var input = element.parentElement.querySelector('.t-storecardquantityinput');
+    var newValue = parseInt(input.value) + value;
+    if (newValue < 1) newValue = 1;
+    input.value = newValue;
+  }
+  
+  function addToCart(button) {
+    var quantityInput = button.parentElement.querySelector('.t-storecardquantityinput');
+    var quantity = parseInt(quantityInput.value);
+    // Ваша логика добавления в корзину с указанным количеством товара
+  }
+  </script>
+
+
+
+<!-- энергетики-->
+</div>
+
+<script>
+var cart = {};
+
+// Функция для изменения количества товара
+function changeQuantity(button, delta) {
+    var input = button.parentElement.querySelector('.t-storecardquantityinput');
+    var newQuantity = parseInt(input.value) + delta;
+    input.value = newQuantity > 0 ? newQuantity : 1; // Кол-во не может быть меньше 1
+}
+
+// Функция для добавления товара в корзину
+function addToCart(productName, price) {
+    var quantity = parseInt(document.querySelector('input[type=number]').value); // Получаем кол-во
+    cart[productName] = (cart[productName] || 0) + quantity;
+    updateCartTotal();
+}
+
+// Функция для обновления отображения корзины
+function updateCartTotal() {
+    var cartItems = document.getElementById('cartItems');
+    var cartTotal = document.getElementById('cartTotal');
+    var checkoutItems = document.getElementById('checkoutItems');
+    var checkoutTotal = document.getElementById('checkoutTotal');
+    cartItems.innerHTML = ''; // Очистка списка товаров
+    checkoutItems.innerHTML = '';
+    var total = 0;
+
+    for (var productName in cart) {
+        var price = parseFloat(document.querySelector('[data-name="' + productName + '"]').getAttribute('data-price'));
+        total += price * cart[productName];
+        cartItems.innerHTML += '<div class="cart-item">' + productName + " x " + cart[productName] + " (" + price * cart[productName] + " руб) <button onclick='removeFromCart(\"" + productName + "\", " + price + ")'>Удалить</button></div>";
+        checkoutItems.innerHTML += productName + " x " + cart[productName] + " (" + price * cart[productName] + " руб)<br>";
+    }
+
+    cartTotal.innerText = "Итого: " + total + " руб";
+    checkoutTotal.innerText = "Итого: " + total + " руб";
+}
+
+// Функция удаления товара из корзины
+function removeFromCart(productName, price) {
+    delete cart[productName];
+    updateCartTotal();
+}
+
+// Функция открытия/закрытия модального окна
+function toggleCheckout() {
+    var checkoutModal = document.getElementById('checkoutModal');
+    checkoutModal.style.display = (checkoutModal.style.display == 'block') ? 'none' : 'block';
+}
+
+// Функция для оформления заказа
+function submitOrder() {
+    // Здесь может быть код при отправке заказа на сервер
+    console.log(cart);
+
+    // Очищаем корзину после оформления заказа
+    cart = {};
+    updateCartTotal();
+    toggleCheckout();
+}
+</script>
+  
+<div id="cart">
+  <!-- Здесь будут отображаться добавленные товары -->
+</div>
+
+<!-- Кнопка для открытия всплывающего окна -->
+<button onclick="openPopup()">Оформить заказ</button>
+
+<!-- Всплывающее окно -->
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Оформление заказа</h2>
+    <form id="orderForm">
+      <label for="name">Имя:</label><br>
+      <input type="text" id="name" name="name"><br>
+      <label for="lastName">Фамилия:</label><br>
+      <input type="text" id="lastName" name="lastName"><br>
+      <label for="address">Адрес:</label><br>
+      <input type="text" id="address" name="address"><br>
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email"><br><br>
+      <label for="payment">Способ оплаты:</label><br>
+      <select id="payment" name="payment">
+        <option value="card">Карта</option>
+        <option value="cash">Наличные</option>
+        <option value="other">Другое</option>
+      </select><br><br>
+      <label for="delivery">Способ доставки:</label><br>
+      <select id="delivery" name="delivery">
+        <option value="delivery">Доставка</option>
+        <option value="pickup">Самовывоз</option>
+        <option value="mail">Почта</option>
+      </select><br><br>
+      <label for="comment">Комментарий:</label><br>
+      <textarea id="comment" name="comment" rows="4" cols="50"></textarea><br><br>
+      <button type="submit">Подтвердить заказ</button>
+    </form>
+  </div>
+</div>
+
+<script>
+// Функция для открытия всплывающего окна
+function openPopup() {
+  document.getElementById("popup").style.display = "block";
+}
+
+// Функция для закрытия всплывающего окна
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
+
+// Функция для обработки отправки формы
+document.getElementById("orderForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  // Дополнительная логика для отправки данных формы на сервер или обработки заказа
+  // Закрываем всплывающее окно после отправки данных
+  closePopup();
+});
+</script>
+
+
+
+
+
+
+</body>
+</html>

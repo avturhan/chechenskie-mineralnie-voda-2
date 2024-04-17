@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>review</title>
+    <link rel="stylesheet" href="./css/review.css">
+
+</head>
+<body>
+   <!-- Гамбургер иконка -->
+<div class="hamburger-menu" id="hamburger-menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<!-- Меню навигации -->
+<nav class="mobile-navigation" id="mobile-navigation">
+  <ul>
+    <li><a href="./главное.html">Главная</a></li>
+    <li><a href="./home.html">О нас</a></li>
+    <li><a href="./drinks.html">Продукция</a></li>
+    <li><a href="./contacts.html">Контакты</a></li>
+    <li><a href="./reviews.html">Отзывы</a></li>
+  </ul>
+  <script>document.addEventListener('DOMContentLoaded', function() {
+    var hamburger = document.getElementById('hamburger-menu');
+    var nav = document.getElementById('mobile-navigation');
+  
+    hamburger.addEventListener('click', function() {
+      // Меню выезжает слева
+      nav.style.left = nav.style.left === '0px' ? '-100%' : '0px';
+    });
+  });
+  </script>
+  <!-- Здесь ваше навигационное меню -->
+</nav>
+
+
+    <!-- Шапка страницы с отзывами -->
+<header class="reviews-header">
+    <h1>Чеченские Минеральные Воды</h1>
+  </header>
+  <div class="foot-header">
+    <h2>Отзывы наших клиентов</h2>
+    <p>Ваши отзывы помогают нам становиться лучше. Спасибо, что делитесь своими впечатлениями!</p>
+  </div>
+  
+
+    <!-- Кнопка для вызова формы -->
+    <button class="leave-review-btn" id="leaveReviewBtn">Оставить отзыв</button>
+
+
+    <section class="reviews">
+        <div class="review-item">
+          <h3>Анна К.</h3>
+          <div class="review-rating">
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9734;</span> <!-- Неокрашенная звезда -->
+          </div>
+          <p>Отличная минеральная вода! Чувствуется естественный вкус и чистота. Очень понравилась для повседневного употребления.</p>
+          <span class="review-date">22 октября 2021</span>
+        </div>
+      
+        <div class="review-item">
+           
+          <h3>Иван И.</h3>
+           <div class="review-rating">
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span> <!-- Неокрашенная звезда -->
+              </div>
+          <p>Доставка всегда вовремя, а вода — свежая и охлажденная. Спасибо за вашу работу и качественную продукцию!</p>
+          <span class="review-date">22 октября 2021</span>
+        </div>
+      
+        <div class="review-item">
+          <h3>Ольга П.</h3>
+          <div class="review-rating">
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9734;</span> <!-- Неокрашенная звезда -->
+          </div>
+          <p>Я перепробовала множество марок минеральной воды, но именно от "Чеченских минеральных вод" осталась в восторге. Идеальное сочетание цены и качества.</p>
+          <span class="review-date">22 октября 2021</span>
+        </div>
+      
+        <div class="review-item">
+          <h3>Артем З.</h3>
+          <div class="review-rating">
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9734;</span> <!-- Неокрашенная звезда -->
+          </div>
+          <p>Попробовал минеральную воду "Серноводская" впервые месяц назад и сразу стал постоянным покупателем. Отличное качество!</p>
+          <span class="review-date">22 октября 2021</span>
+        </div>
+        
+
+        <div class="review-item">
+          <h3>Олеся К.</h3>
+          <div class="review-rating">
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9734;</span> <!-- Неокрашенная звезда -->
+          </div>
+          <p>Длительное время искала идеальный вариант чистой питьевой воды, и, наконец, нашла. Чеченские минеральные воды – это то, что нужно для моего здоровья.</p>
+          <span class="review-date">5 ноября 2021</span>
+        </div>
+        
+
+        <div class="review-item">
+          <h3>Максим Д.</h3>
+          <div class="review-rating">
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9734;</span> <!-- Неокрашенная звезда -->
+          </div>
+          <p>Лимонады просто великолепны – свежие, разные вкусы и без лишней химии. Вся семья в восторге, особенно от ЧИАССР апельсин!</p>
+          <span class="review-date">18 ноября 2021</span>
+        </div>
+        
+        <div class="review-item">
+            <h3>Нина Г.</h3>
+            <div class="review-rating">
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span> <!-- Неокрашенная звезда -->
+              </div>
+            <p>Минеральная вода от компании всегда на высшем уровне. У каждого вида свой неповторимый вкус и свойства. Высокое качество продукции и сервис – то, за что я ценю эту марку.</p>
+            <span class="review-date">23 ноября 2021</span>
+        </div>
+        
+        <div class="review-item">
+            <h3>Кирилл Т.</h3>
+            <div class="review-rating">
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span> <!-- Неокрашенная звезда -->
+              </div>
+            <p>Все напитки просто уникальны! Особенно впечатлен натуральными ароматами лимонадов, без искусственных добавок. Отличная работа!</p>
+            <span class="review-date">30 ноября 2021</span>
+        </div>
+
+        <div class="review-item">
+            <h3>Екатерина М.</h3>
+            <div class="review-rating">
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span> <!-- Неокрашенная звезда -->
+              </div>
+            <p>Мы с коллегами постоянно заказываем воду для нашего офиса. Никогда не было проблем с заказами, и все всегда доставляют точно в срок.</p>
+            <span class="review-date">12 декабря 2021</span>
+        </div>
+
+        <div class="review-item">
+            <h3>Игорь В.</h3>
+            <div class="review-rating">
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span> <!-- Неокрашенная звезда -->
+              </div>
+            <p>После занятий спортом нечего лучше чем стакан холодной минеральной воды "Чеченские". Ощущение полной гармонии и восстановления сил!</p>
+            <span class="review-date">18 декабря 2021</span>
+        </div>
+
+        <div class="review-item">
+            <h3>Любовь С.</h3>
+            <div class="review-rating">
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span> <!-- Неокрашенная звезда -->
+              </div>
+            <p>Обожаю ваши напитки за вкус! Часто беру лимонады на пикники и семейные торжества. Все гости всегда в восторге от качества!</p>
+            <span class="review-date">25 декабря 2021</span>
+        </div>
+
+        <div class="review-item">
+            <h3>Антон П.</h3>
+            <div class="review-rating">
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span> <!-- Неокрашенная звезда -->
+              </div>
+            <p>Я пробовал много разных марок минеральной воды, и могу с уверенностью сказать, что 'Чеченские минеральные воды' – лучшие на рынке. Вкус непревзойденный, свежий, без посторонних привкусов.</p>
+            <span class="review-date">5 января 2022</span>
+        </div>
+
+        <div class="review-item">
+            <h3>Светлана Е.</h3>
+            <div class="review-rating">
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span> <!-- Неокрашенная звезда -->
+              </div>
+            <p>Прекрасные напитки и великолепный сервис! Особо хочется выделить натуральный состав и приятные вкусы. Большой выбор для всех членов семьи.</p>
+            <span class="review-date">15 января 2022</span>
+        </div>
+
+        <div class="review-item">
+            <h3>Михаил Д.</h3>
+            <div class="review-rating">
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span> <!-- Неокрашенная звезда -->
+              </div>
+            <p>Удивительно, но после перехода на минеральную воду от 'Чеченские минеральные воды' я забыл о желудочных болях. Отличный продукт, который теперь всегда в моем холодильнике.</p>
+            <span class="review-date">22 января 2022</span>
+        </div>
+
+        <div class="review-item">
+            <h3>Оксана Т.</h3>
+            <div class="review-rating">
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span> <!-- Неокрашенная звезда -->
+              </div>
+            <p>Замечательная вода и отличное обслуживание! Доставка всегда точно в срок, и каждый раз приятно получать свой заказ. Спасибо за ваш профессионализм и заботу о клиентах.</p>
+            <span class="review-date">28 января 2022</span>
+        </div>
+
+        <div class="review-item">
+            <h3>Георгий С.</h3>
+            <div class="review-rating">
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span> <!-- Неокрашенная звезда -->
+              </div>
+            <p>Лимонад от 'Чеченские минеральные воды' стал для меня настоящим открытием этого лета! Освежающий, с натуральным вкусом, без кучи лишних добавок. Постоянно покупаем для всей семьи!</p>
+            <span class="review-date">2 февраля 2022</span>
+        </div>
+   
+   </section>
+    <div>
+    <button class="load-more-btn">Показать ещё</button>
+    <script>
+         document.addEventListener('DOMContentLoaded', function() {
+    const loadMoreBtn = document.querySelector('.load-more-btn');
+
+    // Функция, которая скрывает все отзывы, кроме первых трех
+    function hideExtraReviews() {
+      const allReviews = document.querySelectorAll('.review-item');
+      allReviews.forEach((review, index) => {
+        if (index >= 5) { // Скрываем все отзывы, начиная с четвертого
+          review.style.display = 'none';
+        }
+      });
+    }
+
+    // Сначала скрываем все отзывы, кроме первых трех
+    hideExtraReviews();
+
+    // Обработчик события клика на кнопку "Показать ещё"
+    loadMoreBtn.addEventListener('click', function() {
+      const hiddenReviews = document.querySelectorAll('.review-item[style="display: none;"]');
+      hiddenReviews.forEach(review => {
+        review.style.display = 'block'; // Показываем скрытые отзывы
+      });
+      loadMoreBtn.style.display = 'none'; // Скрываем кнопку после загрузки всех отзывов
+    });
+  });
+    </script>
+    </div>
+</body>
+</html>

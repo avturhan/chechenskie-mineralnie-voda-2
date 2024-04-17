@@ -1,0 +1,193 @@
+header {
+  background-color: #ffffff; /* Чистый белый цвет фона */
+  color: #005f73; /* Темно-синий цвет текста */
+  border-bottom: 3px solid #000000; /* Подчеркивание шапки цветом морской волны */
+  padding: 20px 0px; /* Отступы сверху и снизу шапки */
+  box-shadow: 0 2px 4px rgba(235, 224, 224, 0.1); /* Легкая тень для глубины */
+} 
+
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Helvetica', sans-serif;
+    color: #333;
+    text-align: center;
+    background: #f5f5f5;
+}
+
+h1 {
+  font-size: 2em; /* Большой размер для заголовка */
+  color: #003e4f; /* Темный синий для визуального воздействия */
+  font-weight: bold; /* Жирный шрифт для внимания */
+  margin: 0.5em; /* Убрать все отступы по умолчанию */
+  color: #2c3e50;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+
+/* Базовые стили для гамбургер меню */
+.hamburger-menu {
+    cursor: pointer;
+    z-index: 1000; /* Убедитесь, что гамбургер меню находится над всеми элементами */
+    position: fixed; /* Фиксированное позиционирование */
+    top: 20px; /* Отступ сверху */
+    left: 20px; /* Отступ слева */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 25px;
+    width: 35px;
+    background: transparent;
+    border: none;
+    outline: none;
+  }
+  
+  .hamburger-menu span,
+  .hamburger-menu span::before,
+  .hamburger-menu span::after {
+    content: '';
+    background-color: #333;
+    height: 3px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Стилизация навигации */
+  .mobile-navigation {
+    position: fixed;  /* Фиксированное позиционирование */
+    top: 0;
+    bottom: 0;
+    left: -260px; /* Начальное положение вне экрана */
+    width: 250px; /* Ширина меню */
+    background: #343a40; /* Фоновый цвет меню */
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;  /* Отступ сверху */
+    transition: left 0.3s ease; /* Анимация появления меню */
+    z-index: 999;
+  }
+  
+  /* Стили для элементов навигации */
+  .mobile-navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .mobile-navigation li a {
+    color: #fff;
+    padding: 15px;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s ease;
+  
+    /* Визуальные эффекты */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .mobile-navigation li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .contacts-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding-bottom: 50px;
+    padding-top: 15px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background: #fff;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .contacts-container:hover {
+    transform: translateY(-5px);
+  }
+  
+  .contact-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+  
+  .contact-info-item {
+    background: #f7f7f7;
+    padding: 20px;
+    border-left: 5px solid #5cb85c; /* Разместите здесь основной цвет вашего бренда */
+    border-radius: 5px;
+  }
+
+  .contacts-container h2{
+    font-size: 35px;
+  }
+  .contacts-container a {
+    text-decoration: none;
+    color: #000000;
+    transition: background-color 0.3s ease-in-out;
+  }
+  .contacts-container a:hover {
+    color: #0b910b;
+  }
+  
+  .contact-info-item h3 {
+    color: #5cb85c; /* Используйте основной цвет вашего бренда */
+    margin-bottom: 20px;
+    font-size: 23px;
+  }
+  
+  /* Стиль для элементов формы */
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    transition: border 0.3s ease-in-out;
+  }
+  
+  .contact-form input[type="text"]:focus,
+  .contact-form input[type="email"]:focus,
+  .contact-form textarea:focus {
+    border-color: #5cb85c; /* Основной цвет вашего бренда */
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(92,184,92,0.6);
+    outline: none;
+  }
+  
+  .contact-form button {
+    display: inline-block;
+    width: auto;
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 30px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .contact-form button:hover {
+    background-color: #449d44;
+  }
+  
+  /* Стили для адаптивной вёрстки */
+  @media (max-width: 768px) {
+    .contact-info {
+      grid-template-columns: 1fr;
+    }
+  
+    .contact-info-item {
+      margin-bottom: 20px;
+    }
+  }
+  

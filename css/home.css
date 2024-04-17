@@ -1,0 +1,345 @@
+header {
+  background-color: #ffffff; /* Чистый белый цвет фона */
+  color: #005f73; /* Темно-синий цвет текста */
+  border-bottom: 2px solid #00afad; /* Подчеркивание шапки цветом морской волны */
+  padding: 20px 0px; /* Отступы сверху и снизу шапки */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Легкая тень для глубины */
+} 
+
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Helvetica', sans-serif;
+    color: #333;
+    text-align: center;
+    background: #f5f5f5;
+}
+
+h1 {
+  font-size: 2em; /* Большой размер для заголовка */
+  color: #003e4f; /* Темный синий для визуального воздействия */
+  font-weight: bold; /* Жирный шрифт для внимания */
+  margin: 0.5em; /* Убрать все отступы по умолчанию */
+  color: #2c3e50;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+
+/* Базовые стили для гамбургер меню */
+.hamburger-menu {
+    cursor: pointer;
+    z-index: 1000; /* Убедитесь, что гамбургер меню находится над всеми элементами */
+    position: fixed; /* Фиксированное позиционирование */
+    top: 20px; /* Отступ сверху */
+    left: 20px; /* Отступ слева */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 25px;
+    width: 35px;
+    background: transparent;
+    border: none;
+    outline: none;
+  }
+  
+  .hamburger-menu span,
+  .hamburger-menu span::before,
+  .hamburger-menu span::after {
+    content: '';
+    background-color: #333;
+    height: 3px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Стилизация навигации */
+  .mobile-navigation {
+    position: fixed;  /* Фиксированное позиционирование */
+    top: 0;
+    bottom: 0;
+    left: -260px; /* Начальное положение вне экрана */
+    width: 250px; /* Ширина меню */
+    background: #343a40; /* Фоновый цвет меню */
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;  /* Отступ сверху */
+    transition: left 0.3s ease; /* Анимация появления меню */
+    z-index: 999;
+  }
+  
+  /* Стили для элементов навигации */
+  .mobile-navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .mobile-navigation li a {
+    color: #fff;
+    padding: 15px;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s ease;
+  
+    /* Визуальные эффекты */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .mobile-navigation li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+
+.about-us-container {
+    max-width: 800px;
+    padding: 40px;
+    margin: 80px auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.about-us-container:hover {
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Если на странице есть фотографии команды, вы можете добавить стили для них */
+.team-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 10px;
+    background-size: cover;
+    background-position: center;
+    display: inline-block;
+}
+
+/* Кнопки социальных сетей */
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    color: #2c3e50;
+    transition: color 0.3s ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+img {
+    border-style: none;
+}
+*, ::after, ::before {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+user agent stylesheet
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+.page__body {
+    margin: 0 auto;
+    background-color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    line-height: normal;
+    font-family: "Halvar Breitschrift", Arial, Helvetica, sans-serif;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+element.style {
+    width: 100%;
+    aspect-ratio: 395/646;
+    object-fit: cover;
+    display: block;
+    max-height: 646px;
+}
+@media (max-width: 768px){ 
+.gallery__image {
+    aspect-ratio: 186/321;
+    max-height: 321px;
+ }
+}
+.gallery__image {
+    width: 100%;
+    aspect-ratio: 395/646;
+    object-fit: cover;
+    display: block;
+    max-height: 646px;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    overflow: clip;
+    border-style: none;
+    margin-right: 50px;
+}
+
+*, ::after, ::before {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+.gallery {
+    --gap: clamp(16px, 2vw, 32px);
+    display: grid;
+    gap: var(--gap);
+    grid-template-columns: repeat(auto-fit, minmax(var(--item-width, 280px), 1fr));
+    margin-bottom: clamp(32px, 5.2vw, 48px);
+}
+.unstyled-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.content {
+    font-size: clamp(0.875rem, calc(0.7566rem + 0.5263vw), 1.25rem);
+    color: #000;
+}
+.page__body {
+    margin: 0 auto;
+    background-color: #fff;
+    font-size: 16px;
+    font-weight: 40;
+    color: #000;
+    line-height: normal;
+    font-family: "Halvar Breitschrift", Arial, Helvetica, sans-serif;
+    height: 100%;
+    overflow-x: hidden;
+}
+.img-process{
+    display: flex;
+    height: 400px;
+    width: 350px;
+
+}
+
+.documents-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+  }
+  
+  .documents-list li {
+    flex: 0 30%; /* Задаем ширину каждой колонки */
+    box-sizing: border-box;
+    margin-bottom: 20px; /* Расстояние между элементами сверху и снизу */
+    display: flex;
+    align-items: center;
+  }
+  
+.about__docs-item-icon-src {  
+    margin-right: 10px; 
+    width: 10%; 
+}
+
+  
+  /* Адаптация под мобильные устройства */
+  @media (max-width: 768px) {
+    .documents-list li {
+      flex: 0 48%; /* Делаем две колонки на устройствах с меньшим экраном */
+      margin-bottom: 15px;
+    }
+  }
+  
+  /* Адаптация для очень узких экранов, например, мобильных телефонов */
+  @media (max-width: 480px) {
+    .documents-list li {
+      flex-basis: 100%; /* Каждая колонка занимает всю ширину экрана */
+    }
+  }
+  
+  .about__important {
+    background-color: #f9f9f9; /* Светлый фон для контраста */
+    padding: 20px;
+    border-radius: 10px; /* Скругление углов */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень для объемности */
+    margin: 20px 0; /* Отступы сверху и снизу */
+  }
+  
+  .article__title {
+    color: #2c3e50; /* Темно-синий цвет текста */
+    font-weight: 700; /* Жирность шрифта */
+    margin-bottom: 15px; /* Отступ снизу */
+  }
+  
+  .about__important p {
+    color: #666; /* Серый цвет текста для отличия от заголовка */
+    line-height: 1.6; /* Межстрочное расстояние для читаемости */
+    margin-bottom: 15px; /* Отступ снизу */
+  }
+  
+  .about__important-facts {
+    display: grid; /* Используем грид для аранжировки элементов */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Автоматические-колонки с минимальной шириной */
+    gap: 20px; /* Отступы между элементами грида */
+  }
+  
+  .about__important-facts-item {
+    background: white; /* Белый фон для каждого пункта */
+    border-radius: 8px; /* Скругление углов пунктов */
+    padding: 15px; /* Внутренние отступы */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Легкая тень */
+    transition: transform 0.2s ease; /* Плавный эффект при наведении */
+  }
+  
+  .about__important-facts-item:hover {
+    transform: translateY(-5px); /* Поднимает элементы при наведении */
+  }
+  
+  .about__important-facts-title {
+    color: #27ae60; /* Зеленый цвет для заголовков пунктов */
+    font-size: 20px; /* Увеличенный размер шрифта для заголовков */
+    font-weight: 600; /* Жирность заголовков */
+    margin-bottom: 10px; /* Отступ снизу у заголовка */
+  }
+  
+  .about__important-facts-text {
+    color: #333; /* Темно-серый цвет текста пунктов */
+    font-size: 17px; /* Размер шрифта текста пунктов */
+    line-height: 1.5; /* Межстрочное расстояние текста пунктов */
+  }
+ 
+.about__history-block-col {
+    background-color: #ffffff; /* Белый фон для контраста */
+    padding: 20px;
+    margin: 20px 0;
+    border-left: 4px solid #27ae60; /* Акцентная полоса слева */
+    border-radius: 5px; /* Скругление углов */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Добавляем тень для глубины */
+    transition: box-shadow 0.3s ease-in-out; /* Плавный эффект тени при наведении */
+  }
+  
+  .about__history-block-col h2 {
+    color: #2c3e50; /* Темный умеренный цвет для заголовка */
+    margin-bottom: 10px; /* Отступ после заголовка */
+  }
+  
+  .about__history-block-col p {
+    color: #666666; /* Умеренно темный серый цвет текста для приятной читабельности */
+    line-height: 1.6; /* Межстрочное расстояние для лучшей читаемости */
+    margin-bottom: 10px; /* Отступ между абзацами */
+  }
+  
+  .about__history-block-col:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Усиленная тень при наведении */
+  }
+  

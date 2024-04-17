@@ -1,0 +1,433 @@
+header {
+    background-color: #ffffff; /* Чистый белый цвет фона */
+    color: #005f73; /* Темно-синий цвет текста */
+    border-bottom: 3px solid #000000; /* Подчеркивание шапки цветом морской волны */
+    padding: 20px 0px; /* Отступы сверху и снизу шапки */
+    box-shadow: 0 2px 4px rgba(235, 224, 224, 0.1); /* Легкая тень для глубины */
+  } 
+  
+  
+  body, html {
+      height: 100%;
+      margin: 0;
+      font-family: 'Helvetica', sans-serif;
+      color: #333;
+      text-align: center;
+      background: #f5f5f5;
+  }
+  
+  h1 {
+    font-size: 2em; /* Большой размер для заголовка */
+    color: #003e4f; /* Темный синий для визуального воздействия */
+    font-weight: bold; /* Жирный шрифт для внимания */
+    margin: 0.5em; /* Убрать все отступы по умолчанию */
+    color: #2c3e50;
+      font-size: 32px;
+      margin-bottom: 20px;
+  }
+  
+  
+  /* Базовые стили для гамбургер меню */
+  .hamburger-menu {
+      cursor: pointer;
+      z-index: 1000; /* Убедитесь, что гамбургер меню находится над всеми элементами */
+      position: fixed; /* Фиксированное позиционирование */
+      top: 20px; /* Отступ сверху */
+      left: 20px; /* Отступ слева */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 25px;
+      width: 35px;
+      background: transparent;
+      border: none;
+      outline: none;
+    }
+    
+    .hamburger-menu span,
+    .hamburger-menu span::before,
+    .hamburger-menu span::after {
+      content: '';
+      background-color: #333;
+      height: 3px;
+      width: 100%;
+      transition: all 0.3s ease-in-out;
+    }
+    
+    /* Стилизация навигации */
+    .mobile-navigation {
+      position: fixed;  /* Фиксированное позиционирование */
+      top: 0;
+      bottom: 0;
+      left: -260px; /* Начальное положение вне экрана */
+      width: 250px; /* Ширина меню */
+      background: #343a40; /* Фоновый цвет меню */
+      box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      padding-top: 50px;  /* Отступ сверху */
+      transition: left 0.3s ease; /* Анимация появления меню */
+      z-index: 999;
+    }
+    
+    /* Стили для элементов навигации */
+    .mobile-navigation ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .mobile-navigation li a {
+      color: #fff;
+      padding: 15px;
+      text-decoration: none;
+      display: block;
+      transition: background 0.3s ease;
+    
+      /* Визуальные эффекты */
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .mobile-navigation li a:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .t-store__parts-switch-wrapper {
+      text-align: center;
+      margin-bottom: 20px; /* Отступ снизу для разделения на категории */
+      margin-top: 30px;
+    }
+    
+    .t-store__parts-switch-btn {
+      display: inline-block;
+      margin: 0 10px; /* Отступы слева и справа от каждой кнопки */
+      padding: 5px 15px;
+      border-radius: 15px;
+      background-color: #eeeeee; /* Цвет фона */
+      cursor: pointer; /* Курсор указывает, что элемент кликабелен */
+      transition: background-color 0.3s ease;
+    }
+    
+    .t-store__parts-switch-btn.t-active,
+    .t-store__parts-switch-btn:hover {
+      background-color: #cccccc; /* Цвет фона при наведении и для активного элемента */
+    }
+    
+    .js-product {
+      margin: 0 auto 20px; /* Отступы для карточек товаров */
+    }
+    
+    /* Когда класс `.filtered` добавляется к карточке, мы будем отображать её */
+    .js-product.filtered {
+      display: block;
+    }
+
+    .t-storegrid-cont {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 15px; /* Расстояние между карточками */
+      padding: 15px;
+    }
+    
+    .t-storecard-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+  
+  /* Стили для контейнера карточки товара */
+  .t-storecard-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  /* Стили для карточки товара */
+  .t-storecard {
+    flex-basis: calc(25.90% - 20px); /* Ширина карточки для трех колонок */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+
+  .t-storecard:hover {
+    background-color: #e9e9e9;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+  }
+
+  .t-storecardimg {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+
+  .t-storecardtitle {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .t-storecarddescr {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+
+  .t-storecardprice {
+    font-size: 18px;
+    color: #ff6347;
+    margin-bottom: 10px;
+  }
+
+  .t-storecardquantitylabel {
+    font-size: 16px;
+    color: #333;
+    margin-right: 10px;
+  }
+
+  .t-storecardquantitybutton {
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+
+
+  .t-storecardquantityinput {
+    font-size: 16px;
+    color: #333;
+    padding: 5px;
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  button.t-add-to-cart {
+    font-size: 18px;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button.t-add-to-cart:hover {
+    background-color: #218838;
+  }
+  .js-product button {
+    font-size: 16px;
+    color: #fff;
+    background-color: #000000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+  }
+
+  .js-product button:hover {
+    background-color: #0056b3;
+  }
+
+  button {
+    font-size: 18px;
+    color: #fff;
+    background-color: #000000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #c82333;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  /* Стили для всплывающего окна */
+/* Стили для всплывающего окна */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6); /* Прозрачный черный фон */
+}
+
+.popup-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2); /* Тень */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.close:hover,
+.close:focus {
+  color: #000; /* Цвет крестика при наведении */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: calc(100% - 40px);
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+select {
+  appearance: none; /* Убираем стандартные стрелки выпадающего списка */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23000000' d='M6 9l-4-4h8z'/%3E%3C/svg%3E"); /* Добавляем кастомную стрелку */
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+textarea {
+  height: 100px;
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.container {
+  margin: 20px;
+}
+
+.cart {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.cart-item {
+  margin-bottom: 5px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

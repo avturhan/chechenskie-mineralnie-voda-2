@@ -1,0 +1,209 @@
+header {
+  background-color: #ffffff; /* Чистый белый цвет фона */
+  color: #005f73; /* Темно-синий цвет текста */
+  border-bottom: 3px solid #000000; /* Подчеркивание шапки цветом морской волны */
+  padding: 20px 0px; /* Отступы сверху и снизу шапки */
+  box-shadow: 0 2px 4px rgba(235, 224, 224, 0.1); /* Легкая тень для глубины */
+} 
+
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Helvetica', sans-serif;
+    color: #333;
+    text-align: center;
+    background: #f5f5f5;
+}
+
+h1 {
+  font-size: 2em; /* Большой размер для заголовка */
+  color: #003e4f; /* Темный синий для визуального воздействия */
+  font-weight: bold; /* Жирный шрифт для внимания */
+  margin: 0.5em; /* Убрать все отступы по умолчанию */
+  color: #2c3e50;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+
+/* Базовые стили для гамбургер меню */
+.hamburger-menu {
+    cursor: pointer;
+    z-index: 1000; /* Убедитесь, что гамбургер меню находится над всеми элементами */
+    position: fixed; /* Фиксированное позиционирование */
+    top: 20px; /* Отступ сверху */
+    left: 20px; /* Отступ слева */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 25px;
+    width: 35px;
+    background: transparent;
+    border: none;
+    outline: none;
+  }
+  
+  .hamburger-menu span,
+  .hamburger-menu span::before,
+  .hamburger-menu span::after {
+    content: '';
+    background-color: #333;
+    height: 3px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Стилизация навигации */
+  .mobile-navigation {
+    position: fixed;  /* Фиксированное позиционирование */
+    top: 0;
+    bottom: 0;
+    left: -260px; /* Начальное положение вне экрана */
+    width: 250px; /* Ширина меню */
+    background: #343a40; /* Фоновый цвет меню */
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;  /* Отступ сверху */
+    transition: left 0.3s ease; /* Анимация появления меню */
+    z-index: 999;
+  }
+  
+  /* Стили для элементов навигации */
+  .mobile-navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .mobile-navigation li a {
+    color: #fff;
+    padding: 15px;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s ease;
+  
+    /* Визуальные эффекты */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .mobile-navigation li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Стили для заголовка страницы */
+  .reviews-header h1 {
+  font-size: 2.5em; /* Увеличим размер заголовка */
+  color: #333; /* Черный цвет текста */
+  text-align: center; /* Центрирование текста */
+  margin-bottom: 30px; /* Отступ снизу */
+  padding: 15px 0px; /* Отступы сверху и снизу шапки */
+}
+
+/* Стили для подзаголовка страницы */
+.foot-header {
+  text-align: center; /* Центрирование текста */
+  margin-bottom: 40px; /* Больший отступ снизу */
+}
+
+.foot-header h2 {
+  font-size: 1.7em; /* Уменьшим размер заголовка */
+  color: #555; /* Серый цвет текста */
+  margin-bottom: 10px; /* Отступ снизу */
+}
+
+.foot-header p {
+  font-size: 25px; /* Размер текста */
+  color: #777; /* Цвет текста */
+  line-height: 1.5; /* Межстрочный интервал */
+}
+
+.leave-review-btn {
+  padding: 10px 20px;
+  border: none;
+  background: #007bff; /* Синий цвет кнопки */
+  color: #fff; /* Белый цвет текста */
+  cursor: pointer;
+  display: block;
+  margin: 40px auto; /* Отступы сверху и снизу, автоматическое центрирование по горизонтали */
+  font-size: 16px;
+  border-radius: 5px; /* Скругление углов */
+  box-shadow: 0px 8px 15px rgba(0, 123, 255, 0.5); /* Тень */
+  transition: background 0.3s, box-shadow 0.3s; /* Плавное изменение цвета и тени при наведении */
+}
+
+.leave-review-btn:hover {
+  background: #0056b3; /* Темно-синий цвет при наведении */
+  box-shadow: 0px 15px 20px rgba(0, 123, 255, 0.4); /* Усиление тени при наведении */
+}
+
+/* Стили для контейнера отзывов */
+.reviews {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Стили для каждого отзыва */
+.review-item {
+  width: 80%; /* Занимает 80% ширины экрана */
+  margin: 20px auto; /* Центрируем отзывы */
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  border-left: 5px solid #007bff; /* Акцентная линия */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.review-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Стили для заголовка отзыва */
+.review-item h3 {
+  color: #0056b3; /* Темно-синий цвет заголовка */
+  margin: 0 0 10px 0; /* Расстояние между заголовком и текстом */
+}
+
+/* Стили для текста отзыва */
+.review-item p {
+  color: #333; /* Темный цвет текста для контраста */
+  font-size: 20px; /* Умеренный размер шрифта */
+  line-height: 1.6; /* Расстояние между строками текста */
+  margin: 0; /* Убрать стандартные отступы */
+}
+
+/* Стили для даты отзыва */
+.review-date {
+  font-size: 15px; /* Меньший размер шрифта для даты */
+  color: #666; /* Серый цвет текста */
+  margin-top: 10px; /* Расстояние сверху */
+  display: block; /* Выводить на новой строке */
+}
+.review-rating{
+  color: #fac400;
+}
+
+/* Стили для кнопки "Показать ещё" */
+.load-more-btn {
+  padding: 10px 20px;
+  border: none;
+  background: #007bff; /* Синий цвет кнопки */
+  color: #fff; /* Белый цвет текста */
+  cursor: pointer;
+  display: block;
+  margin: 40px auto; /* Отступы сверху и снизу, автоматическое центрирование по горизонтали */
+  margin-bottom: 30px;
+  font-size: 16px;
+  border-radius: 5px; /* Скругление углов */
+  box-shadow: 0px 8px 15px rgba(0, 123, 255, 0.5); /* Тень */
+  transition: background 0.3s, box-shadow 0.3s; /* Плавное изменение цвета и тени при наведении */
+}
+
+.load-more-btn:hover {
+  background: #0056b3; /* Темно-синий цвет при наведении */
+  box-shadow: 0px 15px 20px rgba(0, 123, 255, 0.4); /* Усиление тени при наведении */
+}

@@ -1,0 +1,384 @@
+/* Базовые стили для шапки */
+header {
+  background-color: #ffffff; /* Чистый белый цвет фона */
+  color: #005f73; /* Темно-синий цвет текста */
+  border-bottom: 2px solid #00afad; /* Подчеркивание шапки цветом морской волны */
+  padding: 20px 0px; /* Отступы сверху и снизу шапки */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Легкая тень для глубины */
+} 
+
+.container.header-top {
+  display: flex;
+  justify-content: space-between; /* Расположение контента по концам */
+  align-items: center; /* Вертикальное выравнивание */
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 0px; /* Отступы между иконками */
+  color: #00afad; /* Цвет иконок в стиле минеральной воды */
+  font-size: 1.5em; /* Немного увеличить иконки */
+  transition: color 0.3s; /* Плавный переход цвета при наведении */
+  padding: 15px;
+}
+
+.social-icons a:hover {
+  color: #003e4f; /* Затемненный синий при наведении */
+}
+
+h1 {
+  font-size: 2.5em; /* Большой размер для заголовка */
+  color: #003e4f; /* Темный синий для визуального воздействия */
+  font-weight: bold; /* Жирный шрифт для внимания */
+  margin: 0.5em; /* Убрать все отступы по умолчанию */
+}
+
+.contact-info a {
+  color: #00afad; /* Цвет ссылок в стиле минеральной воды */
+  font-size: 1.3em; /* Немного увеличить текст */
+  transition: color 0.3s; /* Плавный переход цвета при наведении */
+  padding: 20px;
+}
+
+.contact-info a:hover {
+  color: #003e4f; /* Затемненный синий при наведении */
+}
+
+/* Стили для навигационного меню */
+nav {
+  background-color: #005f73; /* Цвет фона в стиле минеральной воды */
+  padding: 20px 0; /* Внутренние отступы по вертикали */
+}
+
+nav ul {
+  list-style-type: none; /* Убираем маркеры списка */
+  margin: 0; /* Убираем внешние отступы */
+  padding: 0; /* Убираем внутренние отступы */
+  display: flex; /* Элементы списка располагаем в строку */
+  justify-content: center; /* Выравниваем по центру */
+}
+
+nav li {
+  margin: 0 15px; /* Отступы между пунктами меню */
+}
+
+nav a {
+  color: #fff; /* Белый цвет текста ссылок */
+  text-decoration: none; /* Убираем подчеркивание */
+  font-size: 1.5em; /* Размер шрифта */
+  padding: 10px 20px; /* Внутренние отступы */
+  transition: color 0.3s ease-in-out; /* Плавный переход цвета при наведении */
+}
+
+nav a:hover {
+  color: #00afad; /* Цвет при наведении */
+}
+
+/* Стили для приветственного раздела */
+.welcome-message {
+  text-align: center; /* Выравнивание по центру */
+  background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный белый фон */
+  padding: 20px; /* Внутренние отступы */
+  border-radius: 10px; /* Закругление углов */
+  margin-top: 20px; /* Отступ сверху */
+}
+
+.welcome-message h1 {
+  color: #274472; /* Темно-синий цвет текста */
+  font-size: 3em; /* Большой размер шрифта */
+  margin-bottom: 10px; /* Отступ снизу */
+}
+
+.welcome-message h4 {
+  color: #52796F; /* Зеленый цвет текста */
+  font-size: 1.5em; /* Средний размер шрифта */
+  margin-bottom: 20px; /* Отступ снизу */
+}
+
+/* Стили для раздела "О нас" */
+.about-us {
+  background-color: #E8F1F2; /* Цвет фона, ассоциирующийся с чистотой воды */
+  padding: 40px 10px; /* Увеличенные внутренние отступы */
+  text-align: center; /* Выравнивание текста по центру */
+  border-radius: 12px; /* Скругление углов блока */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Тень для блока */
+}
+
+.about-us h2 {
+  color: #274472; /* Цвет заголовка */
+  margin-bottom: 20px; /* Увеличенный отступ снизу */
+  font-size: 1.7em; /* Увеличенный размер шрифта заголовка */
+}
+
+.about-us p {
+  color: #333; /* Цвет текста */
+  max-width: 1100px; /* Максимальная ширина текста */
+  margin: 0 auto 60px; /* Выравнивание по центру и увеличенный отступ снизу */
+  line-height: 1.5; /* Межстрочный интервал */
+  font-size: 1.4em;
+}
+
+/* Стили для галереи */
+.gallery {
+  padding: 50px 0; /* Увеличенные внутренние отступы */
+  display: grid; /* Используем сетку для расположения изображений */
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Автоматическое размещение изображений в несколько столбцов */
+  justify-content: center; /* Выравнивание изображений по центру */
+
+}
+
+/* Стили для изображений */
+.gallery img {
+  width: 100%; /* Ширина изображения по размеру контейнера */
+  max-width: 450px; /* Максимальная ширина изображения */
+  height: auto; /* Автоматическая высота */
+  border-radius: 12px; /* Скругление углов */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для изображений */
+  margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  /* Адаптивность для мобильных устройств */
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Автоматическое размещение изображений в несколько столбцов на мобильных устройствах */
+  }
+}
+
+
+/* Стили для контейнера меню */
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Стили для каждой колонки меню */
+.menu {
+  flex: 1;
+  margin-right: 20px; /* Отступ между колонками */
+}
+
+/* Стили для каждой категории меню */
+.menu h3 {
+  font-size: 1.8em; /* Размер шрифта заголовка категории */
+  color: #4caf50; /* Зеленый цвет текста заголовка */
+  margin-bottom: 10px; /* Отступ снизу заголовка */
+  padding-left: 20px;
+}
+
+/* Стили для каждого пункта меню */
+.menu-items div {
+  padding: 10px;
+  border-bottom: 1px solid #ccc; /* Горизонтальная линия между пунктами */
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+/* Эффект при наведении на пункт меню */
+.menu-items div:hover {
+  background-color: #f0f0f0; /* Изменяем цвет фона при наведении */
+  cursor: pointer; /* Изменяем курсор при наведении */
+}
+
+/* Стили для кнопки заказа */
+.order-button-1 {
+  padding: 10px 20px; /* Внутренний отступ кнопки */
+  font-size: 1.4em; /* Размер шрифта кнопки */
+  background-color: #4caf50; /* Зеленый цвет фона кнопки */
+  color: #fff; /* Белый цвет текста кнопки */
+  border: none; /* Убираем границу кнопки */
+  border-radius: 5px; /* Скругляем углы кнопки */
+  margin-top: 20px; /* Отступ сверху кнопки */
+  margin-bottom: 40px;
+  transition: background-color 0.3s; /* Плавное изменение цвета фона при наведении */
+}
+
+/* Эффект при наведении на кнопку заказа */
+.order-button-1:hover {
+  background-color: #45a049; /* Изменяем цвет фона кнопки при наведении */
+}
+
+.button-a-drinks{
+  padding-left: 700px;
+}
+
+
+/* Базовые стили раздела с отзывами */
+.review-ul-section{
+  max-width: 900px; /* Ограничиваем ширину раздела */
+  margin: auto; /* Центрируем раздел */
+  padding: 20px;
+  text-align: center; /* Выравниваем текст по центру */
+  margin-bottom: 40px;
+}
+
+/* Стили для заголовка отзывов */
+._17fgIIn___block._3u7JUHo___center.h2 {
+  font-size: 2.5em; /* Увеличиваем размер шрифта заголовка */
+  color: #274472; /* Оттенок синего цвета */
+  padding-bottom: 20px; /* Отступ снизу */
+  border-bottom: 2px solid #274472; /* Линия под заголовком */
+  margin-bottom: 40px; /* Отступ до начала списка отзывов */
+}
+
+/* Стили для фотографий */
+.ul-w-review-avatar {
+  width: 130px; /* Фиксированный размер аватара */
+  height: 130px; /* Квадратный аватар */
+  border-radius: 50%; /* Делаем аватар круглым */
+  display: block; /* Чтобы аватары были на своих строках */
+  margin-bottom: 10px; /* Отступ снизу до имени */
+  margin-left: auto; /* Выравнивание по центру */
+  margin-right: auto; /* Выравнивание по центру */
+}
+
+/* Стили для имени пользователя */
+.ul-w-review-name {
+  font-size: 1.5em; /* Увеличиваем размер шрифта имени */
+  font-weight: bold; /* Сделаем имя жирным */
+}
+
+/* Стили для текста отзыва */
+.ul-w-review-text {
+  background: #f8f8f8; /* Светлый фон для текста отзывов */
+  border-radius: 10px; /* Скругляем углы блока */
+  display: inline-block; /* Делаем блок инлайновым для красивой обтекаемости */
+  margin: 20px 0; /* Вертикальный отступ */
+  padding: 20px; /* Внутренние отступы */
+  text-align: left; /* Выравниваем текст отзыва по левому краю */
+  font-size: 1.2em; /* Установим размер шрифта */
+}
+
+/* Общий стиль для абзаца отзыва */
+.ul-w-review-text-paragraph {
+  margin-bottom: 10px; /* Отступ между параграфами */
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 768px) {
+  section {
+    padding: 10px;
+  }
+}
+
+.order-section {
+  text-align: center;
+  padding: 40px;
+  background-color: #f0f0f0; /* Светлый фон для секции */
+  color: #333; /* Темный текст для контраста */
+}
+
+.order-section h2 {
+  font-size: 2em;
+  margin-bottom: 1em; /* Отступ между заголовком и шагами */
+}
+
+.order-steps {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1em; /* Отступ между шагами и ссылкой "вернуться к напиткам" */
+}
+
+.step {
+  margin: 20px;
+}
+
+.step h3 {
+  font-size: 1.5em;
+  color: #007bff; /* Синий цвет для заголовков шагов */
+  margin-bottom: 0.5em;
+}
+
+.back-to-drinks {
+  display: inline-block;
+  font-size: 1.5em;
+  color: #007bff;
+  text-decoration: none;
+  border-bottom: 1px dotted #007bff; /* Подчеркивание для ссылки */
+}
+
+.back-to-drinks:hover {
+  color: #0056b3; /* Темно-синий цвет при наведении */
+  border-bottom: 1px solid #0056b3; /* Сплошное подчеркивание при наведении */
+}
+
+.order-section p{
+  font-size: 20px;
+}
+
+
+
+.footer {
+  background-color: #000000; /* Чёрный фон */
+  color: #ffffff; /* Белый текст для контраста */
+  padding: 20px 0; /* Вертикальные отступы */
+  font-family: Arial, sans-serif; /* Шрифт для текста */
+}
+
+.footer-info {
+  text-align: center;
+  padding-bottom: 15px; /* Отступ снизу */
+}
+
+.footer-info p {
+  margin: 15px 0; /* Маленькие отступы между строками */
+}
+
+.footer-info a {
+  color: #ffffff; /* Цвет ссылки */
+  text-decoration: none; /* Убрать подчёркивание текста */
+}
+
+.footer-icons {
+  text-align: center; /* Центрирование иконок */
+  padding: 20px 0; /* Отступы */
+}
+
+.footer-icons a {
+  color: #ffffff; /* Цвет иконок */
+  margin: 0 10px; /* Отступы между иконками */
+  font-size: 24px; /* Размер иконок */
+}
+
+.footer-line {
+  height: 1px; /* Высота линии */
+  background-color: #ffffff; /* Цвет линии */
+  margin-top: 10px; /* Отступ сверху */
+}
+
+/* Пример ответа иконок на наведение */
+.footer-icons a:hover {
+  color: #dddddd; /* Светло-серый цвет при наведении */
+}
+
+.load-more-btn {
+  padding: 10px 15px;
+  margin: 20px auto;
+  display: block;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #007bff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.load-more-btn:hover {
+  background-color: #0056b3;
+}
+.review-btn{
+  font-size: 1.5em; /* Увеличенный размер шрифта кнопки */
+  width: 30%; /* Кнопка тянется на всю ширину своего контейнера */
+  padding: 10px;
+  background-color: #005f73; /* Синий цвет кнопки */
+  color: white; /* Белый цвет текста на кнопке */
+  border: none;
+  cursor: pointer;
+  margin-top: 30px; /* Расстояние от последней секции меню до кнопки */
+  transition: background-color 0.3s ease; /* Плавное изменение цвета при наведении */
+  text-decoration: none;
+}
+
+
+
+
+
